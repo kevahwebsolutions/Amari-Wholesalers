@@ -48,6 +48,91 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script>
       new WOW().init();
     </script>
+    <style>
+      .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 80%;
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .popup-content {
+        display: flex;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px white;
+        max-width: 80%;
+        max-height: 80%;
+        overflow: auto;
+        position: relative;
+      }
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .popup-left {
+        flex: 1;
+        margin-right: 20px;
+      }
+      .main-image {
+        width: 100%;
+        height: 80%;
+        margin-bottom: 10px;
+      }
+      .thumbnail-container {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+      }
+      .thumbnail {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        cursor: pointer;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .popup-details {
+        flex: 1;
+      }
+      .buy-now {
+        background-color: #ff7f00;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .buy-now:hover {
+        background-color: #e67300;
+      }
+    
+      @media (max-width: 768px) {
+        .popup-content {
+          flex-direction: column;
+          max-width: 90%;
+        }
+        .popup-left {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
     <!-- //animation-effect -->
   </head>
 
@@ -153,14 +238,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     
           
             
-          <div class="products-right-grids-bottom">
-            <div class="row">
-              <div class="col-md-4 products-right-grid1 animated wow slideInUp" data-wow-delay=".3s" style="text-align: center;">
-                <div class="new-collections-grid1-image">
-                  <a href="" class="product-image"
-                    ><img src="images/dv1.jpeg" alt=" " class="img-responsive" style="margin: 0 auto;"
-                  /></a>
-                </div>
+    <div class="products-right-grids-bottom">
+      <div class="row">
+        <div class="col-md-4 products-right-grid1 animated wow slideInUp" data-wow-delay=".3s">
+          <div class="new-collections-grid1-image" style="text-align: center;">
+            <a href="#" class="product-image" onclick="openPopup('images/dv1.jpeg', 
+            'Velvet duvet 6x7', '3,500', '2 pillowcases, 1 bedsheet, 1 velvet duvet')">
+              <img src="images/dv1.jpeg" alt=" " class="img-responsive" style="margin: 0 auto;" />
+            </a>
+          </div>
                 <h4 style="text-align: center;"><a href="">Velvet duvet 
                   6x7</a></h4>
                 <p style="text-align: center;">2 pillowcases, 1 bedsheet, 1 velvet duvet</p>
@@ -174,74 +260,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <div class="col-md-4 products-right-grid1 animated wow slideInUp" data-wow-delay=".3s" style="text-align: center;">
                 <div class="new-collections-grid1-image">
                   <a href="" class="product-image"
-                    ><img src="images/dv2.jpeg" alt=" " class="img-responsive" style="margin: 0 auto;"
-                  /></a>
-                </div>
-                <h4 style="text-align: center;"><a href="">Velvet duvet 
-                  6x7</a></h4>
-                <p style="text-align: center;">2 pillowcases, 1 bedsheet, 1 velvet duvet</p>
-                <div class="simpleCart_shelfItem products-right-grid1-add-cart">
-                  <p style="text-align: center;">
-                    <i></i> <span class="item_price">Ksh. 3,500</span
-                    ><a class="item_add" href="#">Buy Now </a>
-                  </p>
-                </div>
-              </div>
-           
-            <div class="row">
-              <div class="col-md-4 products-right-grid1 animated wow slideInUp" data-wow-delay=".3s" style="text-align: center;">
-                <div class="new-collections-grid1-image">
-                  <a href="" class="product-image"
-                    ><img src="images/dv3.jpeg" alt=" " class="img-responsive" style="margin: 0 auto;"
-                  /></a>
-                </div>
-                <h4 style="text-align: center;"><a href="">Velvet duvet 
-                  6x7</a></h4>
-                <p style="text-align: center;">2 pillowcases, 1 bedsheet, 1 velvet duvet</p>
-                <div class="simpleCart_shelfItem products-right-grid1-add-cart">
-                  <p style="text-align: center;">
-                    <i></i> <span class="item_price">Ksh. 3,500</span
-                    ><a class="item_add" href="#">Buy Now </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-              <div class="col-md-4 products-right-grid1 animated wow slideInUp" data-wow-delay=".3s" style="text-align: center;">
-                <div class="new-collections-grid1-image">
-                  <a href="" class="product-image"
-                    ><img src="images/dv4.jpeg" alt=" " class="img-responsive" style="margin: 0 auto;"
-                  /></a>
-                </div>
-                <h4 style="text-align: center;"><a href="">Velvet duvet 
-                  6x7</a></h4>
-                <p style="text-align: center;">2 pillowcases, 1 bedsheet, 1 velvet duvet</p>
-                <div class="simpleCart_shelfItem products-right-grid1-add-cart">
-                  <p style="text-align: center;">
-                    <i></i> <span class="item_price">Ksh. 3,500</span
-                    ><a class="item_add" href="#">Buy Now </a>
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4 products-right-grid1 animated wow slideInUp" data-wow-delay=".3s" style="text-align: center;">
-                <div class="new-collections-grid1-image">
-                  <a href="" class="product-image"
-                    ><img src="images/dv5.jpeg" alt=" " class="img-responsive" style="margin: 0 auto;"
-                  /></a>
-                </div>
-                <h4 style="text-align: center;"><a href="">Velvet duvet 
-                  6x7</a></h4>
-                <p style="text-align: center;">2 pillowcases, 1 bedsheet, 1 velvet duvet</p>
-                <div class="simpleCart_shelfItem products-right-grid1-add-cart">
-                  <p style="text-align: center;">
-                    <i></i> <span class="item_price">Ksh. 3,500</span
-                    ><a class="item_add" href="#">Buy Now </a>
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4 products-right-grid1 animated wow slideInUp" data-wow-delay=".3s" style="text-align: center;">
-                <div class="new-collections-grid1-image">
-                  <a href="" class="product-image"
-                    ><img src="images/dv5.jpeg" alt=" " class="img-responsive" style="margin: 0 auto;"
+                    ><img src="images/plow1.jpeg" alt=" " class="img-responsive" style="margin: 0 auto;"
                   /></a>
                 </div>
                 <h4 style="text-align: center;"><a href="">Plain white throw-pillows</a></h4>
@@ -304,7 +323,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul>
               <li>
                 <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i
-                >1234k Avenue, 4th block, <span>New York City.</span>
+                >Nairobi, Kenya<span></span>
               </li>
               <li>
                 <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i
@@ -322,65 +341,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           >
             <h3>Facebook Posts</h3>
             <div class="footer-grid-left">
-              <a href="single.html"
-                ><img src="images/13.jpg" alt=" " class="img-responsive"
+              <a href="https://www.facebook.com/photo?fbid=532923519084942&set=a.197706109273353"
+                ><img src="images/duveeet.jpg" alt=" " class="img-responsive" style="width: 100%; height: 50px; object-fit: cover;"
               /></a>
             </div>
             <div class="footer-grid-left">
-              <a href="single.html"
-                ><img src="images/14.jpg" alt=" " class="img-responsive"
+              <a href="https://www.facebook.com/babystepsventures/videos/7697824426988969"
+                ><img src="images/plastic.jpg" alt=" " class="img-responsive" style="width: 100%; height: 50px; object-fit: cover;"
               /></a>
             </div>
             <div class="footer-grid-left">
-              <a href="single.html"
-                ><img src="images/15.jpg" alt=" " class="img-responsive"
+              <a href="https://www.facebook.com/photo/?fbid=531284202582207&set=pcb.531284582582169"
+                ><img src="images/7 pc Curtain.jpg" alt=" " class="img-responsive" style="width: 100%; height: 50px; object-fit: cover;"
               /></a>
             </div>
-            <div class="footer-grid-left">
-              <a href="single.html"
-                ><img src="images/16.jpg" alt=" " class="img-responsive"
-              /></a>
-            </div>
-            <div class="footer-grid-left">
-              <a href="single.html"
-                ><img src="images/13.jpg" alt=" " class="img-responsive"
-              /></a>
-            </div>
-            <div class="footer-grid-left">
-              <a href="single.html"
-                ><img src="images/14.jpg" alt=" " class="img-responsive"
-              /></a>
-            </div>
-            <div class="footer-grid-left">
-              <a href="single.html"
-                ><img src="images/15.jpg" alt=" " class="img-responsive"
-              /></a>
-            </div>
-            <div class="footer-grid-left">
-              <a href="single.html"
-                ><img src="images/16.jpg" alt=" " class="img-responsive"
-              /></a>
-            </div>
-            <div class="footer-grid-left">
-              <a href="single.html"
-                ><img src="images/13.jpg" alt=" " class="img-responsive"
-              /></a>
-            </div>
-            <div class="footer-grid-left">
-              <a href="single.html"
-                ><img src="images/14.jpg" alt=" " class="img-responsive"
-              /></a>
-            </div>
-            <div class="footer-grid-left">
-              <a href="single.html"
-                ><img src="images/15.jpg" alt=" " class="img-responsive"
-              /></a>
-            </div>
-            <div class="footer-grid-left">
-              <a href="single.html"
-                ><img src="images/16.jpg" alt=" " class="img-responsive"
-              /></a>
-            </div>
+            
             <div class="clearfix"></div>
           </div>
           <div
@@ -405,42 +380,46 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </div>
     </div>
     <!-- //footer -->
-    <script>
-      var url = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?21245';
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = url;
-      var options = {
-      "enabled":true,
-      "chatButtonSetting":{
-          "backgroundColor":"#00e785",
-          "ctaText":"Chat with us",
-          "borderRadius":"25",
-          "marginLeft": "20",
-          "marginRight": "20",
-          "marginBottom": "20",
-          "ctaIconWATI":false,
-          "position":"left"
-      },
-      "brandSetting":{
-          "brandName":"Amari Wholesalers",
-          "brandSubTitle":"undefined",
-          "brandImg":"images/logo.png",
-          "welcomeText":"Hi there!\nHow can I help you?",
-          "messageText":"Hello, I want to purchase a product I saw on your website",
-          "backgroundColor":"#00e785",
-          "ctaText":"Chat with us",
-          "borderRadius":"25",
-          "autoShow":false,
-          "phoneNumber":"254705062916"
-      }
-      };
-      s.onload = function() {
-          CreateWhatsappChatWidget(options);
-      };
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
+     <!-- Add this popup div at the end of your body tag -->
+  <div id="productPopup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <div class="popup-left">
+        <img id="mainImage" src="" alt="Product" class="main-image">
+        <div class="thumbnail-container">
+          <img class="thumbnail" src="images/dv1.jpeg" alt="Thumbnail 1" onclick="changeImage('images/dv1.jpeg')">
+          <img class="thumbnail" src="images/dv2.jpeg" alt="Thumbnail 2" onclick="changeImage('images/dv2.jpeg')">
+          <img class="thumbnail" src="images/dv3.jpeg" alt="Thumbnail 3" onclick="changeImage('images/dv3.jpeg')">
+          <img class="thumbnail" src="images/dv4.jpeg" alt="Thumbnail 3" onclick="changeImage('images/dv4.jpeg')">
+          <img class="thumbnail" src="images/dv5.jpeg" alt="Thumbnail 3" onclick="changeImage('images/dv5.jpeg')">
+        </div>
+      </div>
+      <div class="popup-details">
+        <h2 id="productName"></h2>
+        <p id="productPrice"></p>
+        <p id="productDescription"></p>
+        <button class="buy-now">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add this script tag at the end of your body tag -->
+  <script>
+    function openPopup(imageSrc, name, price, description) {
+      document.getElementById('mainImage').src = imageSrc;
+      document.getElementById('productName').textContent = name;
+      document.getElementById('productPrice').textContent = 'Ksh. ' + price;
+      document.getElementById('productDescription').textContent = 'Capacity ' + description;
+      document.getElementById('productPopup').style.display = 'flex';
+    }
+  
+    function closePopup() {
+      document.getElementById('productPopup').style.display = 'none';
+    }
+  
+    function changeImage(src) {
+      document.getElementById('mainImage').src = src;
+    }
   </script>
   </body>
 </html>
